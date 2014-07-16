@@ -17,7 +17,7 @@ import com.google.gwt.user.client.ui.Widget;
 public class ContentMail extends ScrollPanel{
     
     private String initialHTML = "<div style='text-align:center;'>" +
-                                  "<img src='org.yournamehere.Main/imgs/LogoID.gif' style='opacity:0.15; margin:5em auto' width='350px' height='115px'/>" +
+                                  "<img src='org.idwebmail.Main/imgs/LogoID.gif' style='opacity:0.15; margin:5em auto' width='350px' height='115px'/>" +
                                   "</div>";
     
     public ContentMail(){

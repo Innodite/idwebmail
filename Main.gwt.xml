@@ -20,7 +20,7 @@
     <!-- <inherits name="com.google.gwt.user.theme.chrome.Chrome"/> -->
     <!--<inherits name="com.google.gwt.user.theme.clean.Clean"/>-->
 
-    <entry-point class="org.yournamehere.client.MainEntryPoint"/>
+    <entry-point class="org.idwebmail.client.MainEntryPoint"/>
 
     <!-- Do not define servlets here, use web.xml -->
 </module>

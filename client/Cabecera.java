@@ -64,7 +64,7 @@ public class Cabecera extends HorizontalPanel{
     private Image getLogo(){
         Image logo = new Image();
         //set image source
-        logo.setUrl("org.yournamehere.Main/imgs/LogoID.gif");
+        logo.setUrl("org.idwebmail.Main/imgs/LogoID.gif");
         //logo.setPixelSize(250, 75);
         logo.setWidth("250px");
         logo.setHeight("75px");

@@ -313,7 +313,7 @@ public class CenterPanel extends VerticalPanel{
     public Image getImgPerfil(){
         Image perfil = new Image();
         perfil.setWidth("60px");
-        perfil.setUrl("org.yournamehere.Main/imgs/contactpic_48px.png");
+        perfil.setUrl("org.idwebmail.Main/imgs/contactpic_48px.png");
         return perfil;
     }
     
