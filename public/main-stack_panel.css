@@ -1,0 +1,47 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 19/03/2014, 04:08:47 PM
+    Author     : merma158 <jurbano@innodite.com en Innodite, C.A.>
+*/
+
+/* Data Grid Panel */
+.innodite-grid th{
+    color: #000000;
+    background-image: url("./imgs/gradient_bg_th.png");
+    background-repeat: repeat-x;
+}
+
+.innodite-grid td {
+    color: black;
+}
+
+/* Content ScrollPanel*/
+.innodite-scroll-content-mail{
+    background-color: honeydew;
+    color: #000000;
+}
+
+.innodite-scroll-info-header-mail{
+    background-color: #4D4D4D;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.innodite-logo-head {
+    padding-left: 3px;
+}
+
+.id-toolTip {
+    background-color: #4D4D4D;
+    color: yellow;
+    font-weight: bold;
+}
+
+id-toolTip table th {
+    color: yellow;
+    text-align: justify;
+}
