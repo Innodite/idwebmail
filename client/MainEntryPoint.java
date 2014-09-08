@@ -60,15 +60,8 @@ public class MainEntryPoint implements EntryPoint {
           @Override
           public void actionSend() {
               super.actionSend();
-              //"^([\"]([^.'\"])+[\"])[ ]{0,}\\|[ ]{0,}<[_a-z-A-Z-0-9-]+(\\.[_a-z-A-Z-0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,3})>[;]?$"
-              //"^[_a-z-A-Z-0-9-]+(\\.[_a-z-A-Z-0-9-]+)*@[a-z0-9-]+(\\.[a-z0-9-]+)*(\\.[a-z]{2,3})$"
-              
-              //(([\"][\w\s]+([\"])+?)([<][\w.]+@[\w.]+\.[a-zA-Z]{2,4}[>];))+|([\w.]+@[\w.]+\.[a-zA-Z]{2,4};)+
-              RegExp reStandar = RegExp.compile("(^([\"]([^.'\"])+[\"])[ ]{0,}\\|[ ]{0,}<[_a-z-A-Z-0-9-]+(\\.[_a-z-A-Z-0-9-]+)*@[a-z-A-Z-0-9-]+(\\.[a-z-A-Z-0-9-]+)*(\\.[a-z-A-Z]{2,3})>[;]?$)|"+
-                                                 "(^[_a-z-A-Z-0-9-]+(\\.[_a-z-A-Z-0-9-]+)*@[a-z-A-Z-0-9-]+(\\.[a-z-A-Z-0-9-]+)*(\\.[a-z-A-Z]{2,3})[;]?$)");
-              if (body.getTo().matches(reStandar.getSource())){
+              if (validEmail(body.getTo()) || validEmail(body.getCc()) || validEmail(body.getCo())){
                   //prepareToSend(body.getTo(), body.getCc(), body.getCo(), body.getSg());
-                  Window.alert("Pase");
               }else
                   Window.alert("No Paso");
               
@@ -97,10 +90,21 @@ public class MainEntryPoint implements EntryPoint {
       
       verticalPanel.add(acceso);
       isLogged();
+      //ScreenIn();
       decoratorPanel.add(verticalPanel);
       
       // Add the widgets to the root panel.
       RootPanel.get().add(decoratorPanel);
+    }
+    
+    private boolean validEmail(String str){
+        RegExp reStandar = RegExp.compile("((([\\\"][\\w\\s]+([\\\"])+?)([<][\\w.]+@[\\w.]+\\.[a-zA-Z]{2,4}[>]))+)|(([\\w.]+@[\\w.]+\\.[a-zA-Z]{2,4})+)");
+        String[] parts = str.split(";");
+        int i;
+        for(i=0; i< parts.length; i++) {
+            if(!parts[i].matches(reStandar.getSource())) return false;
+        }
+        return true;
     }
     
     private void login(final String user, final String pass){
